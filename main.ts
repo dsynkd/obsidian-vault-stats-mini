@@ -26,6 +26,6 @@ export default class VaultStatsPlugin extends Plugin {
 		const totalSize = files.reduce((sum: number, file: TFile) => sum + file.stat.size, 0);
 		const sizeInMB = (totalSize / (1024 * 1024)).toFixed(2);
 		this.noteCountItemEl.textContent = `${noteCount} notes`;
-		this.vaultSizeItemEl.textContent = `${sizeInMB}MB size`;
+		this.vaultSizeItemEl.textContent = `${sizeInMB}MB`;
 	}
 }
