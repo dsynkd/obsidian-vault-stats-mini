@@ -24,8 +24,10 @@ export default class VaultStatsPlugin extends Plugin {
 		const markdownFiles = files.filter((file: TFile) => file.extension === 'md');
 		const noteCount = markdownFiles.length;
 		const totalSize = files.reduce((sum: number, file: TFile) => sum + file.stat.size, 0);
-		const sizeInMB = (totalSize / (1024 * 1024)).toFixed(2);
-		this.noteCountItemEl.textContent = `${noteCount} notes`;
-		this.vaultSizeItemEl.textContent = `${sizeInMB}MB`;
+		const sizeInMB = totalSize / (1024 * 1024);
+		const fmt = (n: number, opts?: Intl.NumberFormatOptions) =>
+			n.toLocaleString(undefined, opts);
+		this.noteCountItemEl.textContent = `${fmt(noteCount)} notes`;
+		this.vaultSizeItemEl.textContent = `${fmt(sizeInMB, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}MB`;
 	}
 }
