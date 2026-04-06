@@ -1,4 +1,4 @@
-# Obsidian Vault Statistics (Mini)
+# Obsidian Vault Statistics
 
 This plugin is inspired by [Vault Statistics](https://github.com/bkyle/obsidian-vault-statistics-plugin).
 It is a lighter and much faster version.
@@ -12,5 +12,6 @@ This plugin only displays the following stats:
 
 - Note Count
 - Vault Size
+- Bullet points
 
 Utilizing Obsidian API, this is done with only a few lines of code.
